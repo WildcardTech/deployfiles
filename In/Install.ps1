@@ -2,7 +2,7 @@ $LogFile = "C:\Windows\Temp\Icons_Install.log"
 $TargetFolder = "C:\Users\Icons"
 $SourceFolder = $PSScriptRoot
 
-.\Incons.ps1
+.\Icons.ps1
 
 # Delete any existing logfile if it exists
 If (Test-Path $LogFile){Remove-Item $LogFile -Force -ErrorAction SilentlyContinue -Confirm:$false}
