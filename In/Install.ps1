@@ -2,6 +2,8 @@ $LogFile = "C:\Windows\Temp\Icons_Install.log"
 $TargetFolder = "C:\Users\Icons"
 $SourceFolder = $PSScriptRoot
 
+.\Incons.ps1
+
 # Delete any existing logfile if it exists
 If (Test-Path $LogFile){Remove-Item $LogFile -Force -ErrorAction SilentlyContinue -Confirm:$false}
 
@@ -34,11 +36,3 @@ catch {
     Write-Log "Failed to copy $SourceFolder to $TargetFolder. Error is: $($_.Exception.Message))"
 }
   
-$TargetFile = "https://attala.freshservice.com/"
-$DesktopPath = [Environment]::GetFolderPath("Desktop")
-$ShortcutFile = "$DesktopPath\Report an Issue.lnk"
-$WScriptShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WScriptShell.CreateShortcut($ShortcutFile)
-$Shortcut.TargetPath = $TargetFile
-$shortcut.IconLocation = "C:\Users\Icons\helpdesk.ico"
-$Shortcut.Save()
