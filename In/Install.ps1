@@ -1,4 +1,4 @@
-$LogFile = "C:\Windows\Temp\ViaMonstraTools_Install.log"
+$LogFile = "C:\Windows\Temp\Icons_Install.log"
 $TargetFolder = "C:\Users\Icons"
 $SourceFolder = $PSScriptRoot
 

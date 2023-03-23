@@ -1,4 +1,4 @@
-$LogFile = "C:\Windows\Temp\ViaMonstraTools_Uninstall.log"
+$LogFile = "C:\Windows\Temp\Icons_Uninstall.log"
 $TargetFolder = "C:\Users\Icons"
 
 # Delete any existing logfile if it exists
