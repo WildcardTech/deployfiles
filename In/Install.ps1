@@ -2,7 +2,6 @@ $LogFile = "C:\Windows\Temp\Icons_Install.log"
 $TargetFolder = "C:\Users\Icons"
 $SourceFolder = $PSScriptRoot
 
-.\Icons.ps1
 
 # Delete any existing logfile if it exists
 If (Test-Path $LogFile){Remove-Item $LogFile -Force -ErrorAction SilentlyContinue -Confirm:$false}
@@ -36,3 +35,12 @@ catch {
     Write-Log "Failed to copy $SourceFolder to $TargetFolder. Error is: $($_.Exception.Message))"
 }
   
+# Run Icons Ps1
+Write-Log "About to copy contents from $SourceFolder to $TargetFolder"
+try {
+    C:\Icons\Icons.ps1 -Recurse -Force -ErrorAction Stop
+    Write-Log "Icons Created"
+} 
+catch {
+    Write-Log "Failed to Icons. Error is: $($_.Exception.Message))"
+}
